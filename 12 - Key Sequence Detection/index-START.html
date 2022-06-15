@@ -7,6 +7,22 @@
 </head>
 <body>
 <script>
+
+  const secretCode = 'mario';
+  const pressed = [];
+
+  window.addEventListener('keyup', (e) => {
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+    if (pressed.join('').includes(secretCode)) {
+      let div = document.createElement('div');
+      div.innerHTML = '<img src="https://i0.wp.com/imagenesparapeques.com/wp-content/uploads/2021/05/Mario-Bros-png-transparente.png?w=668&ssl=1">';
+      document.body.append(div);
+    }
+    console.log(pressed);
+  })
+
+
 </script>
 </body>
 </html>
